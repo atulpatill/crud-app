@@ -1,13 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
 import NavBar from './Components/NavBar';
+import CodeForInterview from './Components/CodeForInterview';
+import AllUsers from './Components/AllUsers';
+import AddUser from './Components/AddUser';
 
 function App() {
   return (
-   <>
-    <p>Code with Atul</p> 
+   <p>
     <NavBar />
-  </>
+    <CodeForInterview />
+    <AllUsers />
+    <AddUser />
+  </p>
   );
 }
 

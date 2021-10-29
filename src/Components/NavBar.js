@@ -12,7 +12,7 @@ const useStyle = makeStyles({
 function NavBar() {
     const classes = useStyle();
     return (
-        <AppBar className={classes.header} >
+        <AppBar className={classes.header} position="static" >
             <Toolbar>
              <Typography component="h2">Code is Love</Typography>
              <Typography component="h2">All Users</Typography>
