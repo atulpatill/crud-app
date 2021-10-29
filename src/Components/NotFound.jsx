@@ -1,8 +1,9 @@
 import React from 'react'
+import notfound from '../Assets/Images/NotFound.jpg'
 
 function NotFound() {
     return (
-       <h2>Not Found</h2>
+        <img src={notfound}  style={{width: '30%', margin: '80px 0 0 35%'}}/>
     )
 }
 
