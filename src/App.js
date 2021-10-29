@@ -4,6 +4,7 @@ import CodeForInterview from './Components/CodeForInterview';
 import AllUsers from './Components/AllUsers';
 import AddUser from './Components/AddUser';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import NotFound from './Components/NotFound';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
   <Route exact path="/" component={CodeForInterview}/>
   <Route exact path="/all" component={AllUsers}/>
   <Route exact path="/add" component={AddUser}/>
+  <Route component={NotFound} />
   </Switch>  
     </BrowserRouter>
  
