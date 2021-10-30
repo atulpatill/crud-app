@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const url = "https://userinfo-fix.herokuapp.com/users"
+const url = "https://userinfo-fix.herokuapp.com/api/users"
 
 export const getUsers = async (id) => {
     id = id || '';
