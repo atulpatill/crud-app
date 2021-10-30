@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const url = "http://localhost:3002/users"
+const url = "https://clever-swirles-f874f2.netlify.app/all/users"
 
 export const getUsers = async (id) => {
     id = id || '';
