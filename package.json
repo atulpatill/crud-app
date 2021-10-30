@@ -18,7 +18,7 @@
   },
   "scripts": {
     "start": "node server.js",
-    "json-server": "json-server --watch src/Database/db.json --host 127.0.0.1 --port 3002",
+    "json-server": "json-server --watch src/Database/db.json --host 127.0.0.1 --port https://userinfo-fix.herokuapp.com/api",
     "dev": "concurrently \"npm start\" \"npm run json-server\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
