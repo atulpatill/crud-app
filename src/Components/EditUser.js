@@ -1,7 +1,7 @@
-import react, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FormGroup, FormControl, InputLabel, Input, Button, makeStyles, Typography } from '@material-ui/core';
-import { addUser } from '../Service/api';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
+import { getUsers, editUser } from '../Service/api';
 
 const initialValue = {
     name: '',
@@ -19,11 +19,22 @@ const useStyles = makeStyles({
         }
     }
 })
-const AddUser = () => {
+const EditUser = () => {
     const [user, setUser] = useState(initialValue);
     const { name, username, email, phone } = user;
+    const { id } = useParams();
     const classes = useStyles();
     let history = useHistory();
+
+    useEffect(() => {
+        loadUserDetails();
+    }, []);
+
+    const loadUserDetails = async() => {
+        const response = await getUsers(id);
+        setUser(response.data);
+    }
+
 
 
     const onValueChange = (e) => {
@@ -38,7 +49,7 @@ const AddUser = () => {
 
     return (
         <FormGroup className={classes.container}>
-            <Typography variant="h4">Add User</Typography>
+            <Typography variant="h4">Edit User</Typography>
             <FormControl>
                 <InputLabel htmlFor="my-input">Name</InputLabel>
                 <Input onChange={(e) => onValueChange(e)} name='name' value={name}  />
@@ -56,11 +67,11 @@ const AddUser = () => {
                 <Input onChange={(e) => onValueChange(e)} name='phone' value={phone}  />
             </FormControl>
             <FormControl>
-                <Button variant="contained" color="primary" onClick={() => addUserDetails()} >Add User</Button>
+                <Button variant="contained" color="primary" onClick={() => addUserDetails()} >Edit User</Button>
             </FormControl>
         </FormGroup>
     )
 
 }
 
-export default AddUser
+export default EditUser

@@ -5,6 +5,7 @@ import AllUsers from './Components/AllUsers';
 import AddUser from './Components/AddUser';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import NotFound from './Components/NotFound';
+import EditUser from './Components/EditUser';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
   <Route exact path="/" component={CodeForInterview}/>
   <Route exact path="/all" component={AllUsers}/>
   <Route exact path="/add" component={AddUser}/>
+  <Route exact path="/edit/:id" component={EditUser} />
   <Route component={NotFound} />
   </Switch>  
     </BrowserRouter>

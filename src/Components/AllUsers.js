@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useEffect } from 'react'
 import { Table, TableHead, TableCell, Paper, TableRow, TableBody, Button, makeStyles } from '@material-ui/core'
 import { getUsers } from '../Service/api'
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles({
     table: {
@@ -51,12 +52,14 @@ function AllUsers() {
         <TableBody>
             {users.map((user) => (
                 <TableRow className={classes.row} key={user._id}>
-                    <TableCell>{user._id}</TableCell>
+                    <TableCell>{user.id}</TableCell>
                     <TableCell>{user.name}</TableCell>
                     <TableCell>{user.username}</TableCell>
                     <TableCell>{user.email}</TableCell>
                     <TableCell>{user.phone}</TableCell>
                     <TableCell>
+                    <Button color="primary" variant="contained" style={{marginRight:10}} component={Link} to={`/edit/${user.id}`} >Edit</Button>
+                            <Button color="secondary" variant="contained" >Delete</Button> 
                     </TableCell>
                     </TableRow>
                 ))}

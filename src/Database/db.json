@@ -1,11 +1,25 @@
 {
-    "users": [
-        {
-            "name": "Rohit Sharma",
-            "username": "hitman",
-            "email": "rohitsharma@gmail.com",
-            "phone": "4256125678",
-            "id": 1
-        }
-    ]
+  "users": [
+    {
+      "name": "Rohit Sharma",
+      "username": "hitman",
+      "email": "rohitsharma@gmail.com",
+      "phone": "4256125678",
+      "id": 1
+    },
+    {
+      "name": "Virat Kohli",
+      "username": "runmachine",
+      "email": "viratkohli@gmail.com",
+      "phone": "1234567890",
+      "id": 2
+    },
+    {
+      "name": "MS Dhoni",
+      "username": "Mahi",
+      "email": "msdhoni@gmail.com",
+      "phone": "1245457996",
+      "id": 3
+    }
+  ]
 }
