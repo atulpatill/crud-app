@@ -1,8 +1,67 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useEffect } from 'react'
+import { Table, TableHead, TableCell, Paper, TableRow, TableBody, Button, makeStyles } from '@material-ui/core'
+import { getUsers } from '../Service/api'
+
+const useStyles = makeStyles({
+    table: {
+        width: '90%',
+        margin: '50px 0 0 50px'
+    },
+    thead: {
+        '& > *': {
+            fontSize: 20,
+            background: '#000000',
+            color: '#FFFFFF'
+        }
+    },
+    row: {
+        '& > *': {
+            fontSize: 18
+        }
+    }
+})
+
+
 
 function AllUsers() {
+
+    const [users , setUsers] = useState([])
+    const classes = useStyles();
+    
+    useEffect(() => {
+       getAllUsers() 
+     }, [])
+    const getAllUsers = async() =>{
+        const response = await getUsers()
+       setUsers(response.data)
+    }
     return (
-     <p>Hi from all users</p>
+        <Table className={classes.table}>
+        <TableHead>
+            <TableRow className={classes.thead}> 
+                <TableCell>Id</TableCell>
+                <TableCell>Name</TableCell>
+                <TableCell>Username</TableCell>
+                <TableCell>Email</TableCell>
+                <TableCell>Phone</TableCell>
+                <TableCell></TableCell>
+            </TableRow>
+        </TableHead>
+        <TableBody>
+            {users.map((user) => (
+                <TableRow className={classes.row} key={user._id}>
+                    <TableCell>{user._id}</TableCell>
+                    <TableCell>{user.name}</TableCell>
+                    <TableCell>{user.username}</TableCell>
+                    <TableCell>{user.email}</TableCell>
+                    <TableCell>{user.phone}</TableCell>
+                    <TableCell>
+                    </TableCell>
+                    </TableRow>
+                ))}
+            </TableBody>
+        </Table>
     )
 }
 
