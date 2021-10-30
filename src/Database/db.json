@@ -2,14 +2,14 @@
   "users": [
     {
       "name": "Rohit Sharma",
-      "username": "hitman",
+      "username": "Rohitman",
       "email": "rohitsharma@gmail.com",
       "phone": "4256125678",
       "id": 1
     },
     {
       "name": "Virat Kohli",
-      "username": "runmachine",
+      "username": "Runmachine",
       "email": "viratkohli@gmail.com",
       "phone": "1234567890",
       "id": 2

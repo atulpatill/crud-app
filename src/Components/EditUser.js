@@ -41,10 +41,9 @@ const EditUser = () => {
         console.log(e.target.value);
         setUser({...user, [e.target.name]: e.target.value})
     }
-
-    const addUserDetails = async() => {
-        await addUser(user);
-        history.push('./all');
+    const editUserDetails = async() => {
+        const response = await editUser(id, user);
+        history.push('/all');
     }
 
     return (
@@ -67,7 +66,7 @@ const EditUser = () => {
                 <Input onChange={(e) => onValueChange(e)} name='phone' value={phone}  />
             </FormControl>
             <FormControl>
-                <Button variant="contained" color="primary" onClick={() => addUserDetails()} >Edit User</Button>
+                <Button variant="contained" color="primary" onClick={() => editUserDetails()} >Edit User</Button>
             </FormControl>
         </FormGroup>
     )
