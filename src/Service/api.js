@@ -1,6 +1,7 @@
 import axios from 'axios'
 
-const url =  "http://localhost:3002/users" 
+// const url =  "http://localhost:3002/users" 
+const url =  "https://fake-server-app-539.herokuapp.com/users"
 
 export const getUsers = async (id) => {
     id = id || '';
